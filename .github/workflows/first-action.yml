@@ -1,0 +1,18 @@
+# now in yml files indentation is imp
+
+name: First Workflow # name can be any 
+on: workflow_dispatch # trigger should be fixed 
+jobs: 
+ first-job:
+     runs-on: ubuntu-latest
+     steps:
+        - name: print hello world 
+          run: echo "hello world"
+        - name: print good bye 
+          run: echo "good bye" 
+          
+
+      
+
+     
+  
