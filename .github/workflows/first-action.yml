@@ -1,20 +1,20 @@
-# now in yml files indentation is imp
-
-name: First Workflow # name can be any 
-on: workflow_dispatch # trigger should be fixed 
-jobs: 
- first-job:
-     runs-on: ubuntu-latest
-     steps:
-        - name: print hello world 
-          run: |
-              echo "First output"
-              echo "Second output"
-        - name: print good bye 
-          run: echo "good bye" 
-          
-
-      
+name :  Pull Deployment 
+on: 
+ pull_request:
+  types: 
+    - opened # event/trigger comprises of every thing open,renew etc- but can not close , so we will be using activity types
+jobs:
+  main:
+  runs_on: ubuntu_latest
+  steps:
+    - name: Name of the event 
+      run: echo "my event specifications ${{ toJSON(github.event)}}"
+    - name: Importing code
+      uses: actions/checkout@v7
+    - name: Building My Project
+      run: echo "building your code"
+    - name: Deploying My Code 
+      run: echo "Deploying my code"
 
      
   
