@@ -7,7 +7,7 @@ on:
     - closed # event/trigger comprises of every thing open,renew etc- but can not close , so we will be using activity types
 jobs:
   main:
-  runs_on: ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
     - name: Name of the event 
       run: echo "my event specifications ${{ toJSON(github.event)}}"
