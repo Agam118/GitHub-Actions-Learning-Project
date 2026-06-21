@@ -2,10 +2,12 @@ name :  Pull Deployment
 on: 
  pull_request:
   types: 
-    - opened # event/trigger comprises of every thing open,renew etc- but can not close , so we will be using activity types
+    - opened
+    - merged
+    - closed # event/trigger comprises of every thing open,renew etc- but can not close , so we will be using activity types
 jobs:
   main:
-  runs_on: ubuntu_latest
+  runs_on: ubuntu-latest
   steps:
     - name: Name of the event 
       run: echo "my event specifications ${{ toJSON(github.event)}}"
