@@ -1,11 +1,5 @@
 name :  Pull Deployment 
 on: 
- pull_request:
-  types: 
-    - opened  # event/trigger comprises of every thing open,renew etc- but can not close , so we will be using activity types which will give us more control 
-    - merged
-    - closed
-  workflow_dispatch:
   push:
    branches:
      - main # branches is a filter used to filter out branches another way of having more control to workflow 
@@ -21,4 +15,5 @@ jobs:
       run: echo "building your code"
     - name: Deploying My Code 
       run: echo "Deploying my code"
+
 
