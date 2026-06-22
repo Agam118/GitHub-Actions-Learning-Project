@@ -7,7 +7,8 @@ on:
     - closed
   workflow_dispatch:
   push:
-   branches: [main,dev] # branches is a filter used to filter out branches another way of having more control to workflow 
+   branches:
+     - main # branches is a filter used to filter out branches another way of having more control to workflow 
 jobs:
   main:
    runs-on: ubuntu-latest
